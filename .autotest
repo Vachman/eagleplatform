@@ -1,0 +1,9 @@
+Autotest.add_hook(:initialize) do |at|
+  at.add_exception %r{^./.DS_Store}
+  at.add_exception %r{^./.autotest}
+  at.add_exception %r{^./.rspec}
+  at.add_mapping(%r{^lib/.*\.rb$}) {|f, _|
+    Dir['spec/**/*_spec.rb']
+  }
+  nil
+end
