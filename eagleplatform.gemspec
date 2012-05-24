@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Eagleplatform::VERSION
   s.authors     = ["Vachagan Gevorkyan"]
   s.email       = ["va4@deultonmedia.com"]
-  s.homepage    = "eagleplatform.com"
+  s.homepage    = "http://www.eagleplatform.com"
   s.summary     = %q{Eagleplatform API library}
   s.description = %q{Eagleplatform API library for crud records, translations etc. For more infromation see documentation }
 

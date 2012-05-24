@@ -4,6 +4,7 @@ require 'net/http'
 require 'json'
 require "erb"
 
+require "eagleplatform/eagleplatform_object"
 require "eagleplatform/record"
 require "eagleplatform/translation"
 require "eagleplatform/filter"
@@ -60,15 +61,6 @@ module  Eagleplatform
     RECORD_UPLOAD_FROM_HTTP = { method: "post", path: "/media/records.json"}
     
     FILTER_GET_RECORDS = { method: "get", path: "/media/filters/:id.json"}
-  end
-
-  # @api private
-  # Class provides methods for all Eagleplatform Objects
-  class EagleplatformObject < Struct    
-    # @return [Hash] convert Struct to Hash
-    def to_hash
-      Hash[self.each_pair.to_a]
-    end
   end
 
   class << self
