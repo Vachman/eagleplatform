@@ -89,7 +89,8 @@ module  Eagleplatform
           raise "Wrong http method name '#{api_method[:method]}'"
         end
          
-        puts req_code.result(binding)
+        #puts req_code.result(binding)
+        
         # Execute request
         eval req_code.result(binding)
     end
