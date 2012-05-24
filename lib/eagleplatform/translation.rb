@@ -44,6 +44,7 @@ module  Eagleplatform
       translations
     end
     
+    
     ##
     # Find Translation by ID
     # @param [Numeric] id ID of translation
@@ -60,6 +61,42 @@ module  Eagleplatform
        trans = self.new
        trans.each_pair { |k,v| trans[k] = result[k] }
     end
+
+
+    ##
+    # Update translation on Eagleplatform
+    # @param [Hash] translation Hash of translation fields
+    # @option translation [String] :id
+    # @option translation [String] :name
+    # @option translation [String] :description
+    # @example 
+    #   Eagleplatform::Translation.update(id: 1234, name: 'Hello world', description: 'Heyy')
+    # @return [Hash] Updated translation
+    def self.update(args = {})
+      raise ArgumentError, 'ID is blank' if args[:id].blank?  
+      raise ArgumentError, 'id must be numeric' unless args[:id].is_a? Numeric
+      params = {
+        translation: args
+      }
+      
+      api_method = {method: Methods::TRANSLATION_UPDATE[:method], 
+                    path: Methods::TRANSLATION_UPDATE[:path].gsub(':id',args[:id].to_s)}
+      result = Eagleplatform.call_api(api_method, params).first[1].to_options
+    end
+
+
+    ## 
+    # Delete translation from Eagleplatform
+    # @example 
+    #   Eagleplatform::Translation.delete(1234)
+    # @return [String] 'Translation id: #{id} is deleted' if translation deleted successfully
+    def self.delete(id)
+      raise ArgumentError, 'id must be numeric' unless id.is_a? Numeric
+      api_method = {method: Methods::TRANSLATION_DELETE[:method], 
+                    path: Methods::TRANSLATION_DELETE[:path].gsub(':id',id.to_s)}        
+      Eagleplatform.call_api(api_method) == "ok" ? "Translation id: '#{id}' is switched off" : (raise "Can't switch off translation")
+    end
+    
 
     ##
     # Update translation on Eagleplatform
@@ -94,7 +131,7 @@ module  Eagleplatform
     def delete
       api_method = {method: Methods::TRANSLATION_DELETE[:method], 
                     path: Methods::TRANSLATION_DELETE[:path].gsub(':id',id.to_s)}        
-      Eagleplatform.call_api(api_method) == "ok" ? "Translation id: '#{self.id}', name:#{self.name} is switched off" : (raise "Can't delete record")
+      Eagleplatform.call_api(api_method) == "ok" ? "Translation id: '#{self.id}', name:#{self.name} is switched off" : (raise "Can't switch off translation")
     end
     
     ##

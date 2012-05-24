@@ -58,25 +58,41 @@ module  Eagleplatform
       rec.each_pair { |k,v| rec[k] = result[k]}
     end
     
+    
+    ##
+    # Update record on Eagleplatform
+    # @param [Hash] record Hash of record fields
+    # @option record [String] :id
+    # @option record [String] :name
+    # @option record [String] :description
+    # @example 
+    #   Eagleplatform::Record.update(id: 1234, name: 'Hello world', description: 'Heyy')
+    # @return [Hash] Updated record 
     def self.update(args = {})
       raise ArgumentError, 'ID is blank' if args[:id].blank?  
       raise ArgumentError, 'id must be numeric' unless args[:id].is_a? Numeric
       params = {
         record: args
       }
-      api_method = {method: Methods::RECORD_UPDATE[:method], 
-                    path: Methods::RECORD_UPDATE[:path].gsub(':id',id.to_s)}
       
+      api_method = {method: Methods::RECORD_UPDATE[:method], 
+                    path: Methods::RECORD_UPDATE[:path].gsub(':id',args[:id].to_s)}
       result = Eagleplatform.call_api(api_method, params).first[1].to_options
-      self.to_hash.diff(result).keys.include?(:updated_at) ? self : 'Something wrong'
     end
     
+    
+    ## 
+    # Delete record from Eagleplatform
+    # @example 
+    #   Eagleplatform::Record.delete(1234)
+    # @return [String] 'Record id: #{id} is deleted' if record deleted successfully
     def self.delete(id)
       raise ArgumentError, 'id must be numeric' unless id.is_a? Numeric
       api_method = {method: Methods::RECORD_DELETE[:method], 
                     path: Methods::RECORD_DELETE[:path].gsub(':id',id.to_s)}        
       Eagleplatform.call_api(api_method) == "ok" ? "Record id: '#{id}' is deleted" : (raise "Can't delete record")
     end
+    
     
     ##
     # Create record and upload file form http server
@@ -126,7 +142,7 @@ module  Eagleplatform
     # @example 
     #   record = Eagleplatform::Record.find(1234)
     #   record.delete
-    # @return [String] 'ok' if record deleted successfully
+    # @return [String] 'Record id: #{id}, name:#{self.name} is deleted' if record deleted successfully
     def delete
       api_method = {method: Methods::RECORD_DELETE[:method], 
                     path: Methods::RECORD_DELETE[:path].gsub(':id',id.to_s)}        
