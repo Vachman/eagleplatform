@@ -87,7 +87,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/eagleplatform.rb</dd>
+    <dd class="r2 last">lib/eagleplatform/filter.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -422,12 +422,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-395
-396
-397</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_current_page'>current_page</span>
   <span class='ivar'>@current_page</span>
@@ -464,12 +464,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-395
-396
-397</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -506,12 +506,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-395
-396
-397</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -548,12 +548,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-395
-396
-397</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_per_page'>per_page</span>
   <span class='ivar'>@per_page</span>
@@ -590,12 +590,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-395
-396
-397</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_total_entries'>total_entries</span>
   <span class='ivar'>@total_entries</span>
@@ -632,12 +632,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-395
-396
-397</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_total_pages'>total_pages</span>
   <span class='ivar'>@total_pages</span>
@@ -785,23 +785,23 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-476
-477
-478
-479
-480
-481
-482
-483
-484
-485
-486
-487
-488
-489</pre>
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 476</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 110</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_per_page'>per_page</span> <span class='op'>=</span> <span class='int'>50</span><span class='comma'>,</span> <span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='int'>1</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>per_page must be betwen 1 to 1000</span><span class='tstring_end'>'</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_per_page'>per_page</span><span class='period'>.</span><span class='id identifier rubyid_between?'>between?</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>1000</span><span class='rparen'>)</span>
@@ -879,34 +879,34 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-434
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448
-449
-450
-451
-452
-453
-454
-455
-456
-457
-458</pre>
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 434</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_next_page'>next_page</span>
   <span class='kw'>if</span> <span class='ivar'>@current_page</span> <span class='op'>&lt;</span> <span class='ivar'>@total_pages</span>
@@ -980,12 +980,12 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
       <pre class="lines">
 
 
-399
-400
-401</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 399</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform/filter.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_records'>records</span>
   <span class='ivar'>@records</span>
@@ -1000,7 +1000,7 @@ f.records.each { |rec| puts &quot;name: #{rec.name} created_at: #{rec.created_at
 </div>
     
     <div id="footer">
-  Generated on Thu May 24 14:15:40 2012 by 
+  Generated on Thu May 24 15:51:35 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>

@@ -1,1 +1,5 @@
-lib/eagleplatform.rb 0d4034018d929bfd159f33baf43fbcca23f220ac
+lib/eagleplatform.rb d31c4ee34659146fb6c16f78bf6c0c95b4972e24
+lib/eagleplatform/record.rb 844c185766c981ffcdad223e967180586ebb220c
+lib/eagleplatform/filter.rb 027d3836dc3505dcd55f3a15cc3910423cda98d5
+lib/eagleplatform/version.rb 72954a272d578f774073b050e52843412db5fc5a
+lib/eagleplatform/translation.rb 38113ee2f1390c8a861ac4ce3d2af00efbc6cb1a
