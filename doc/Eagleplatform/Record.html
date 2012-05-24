@@ -66,14 +66,10 @@
   
     <dt class="r1">Inherits:</dt>
     <dd class="r1">
-      <span class="inheritName"><span class='object_link'><a href="EagleplatformObject.html" title="Eagleplatform::EagleplatformObject (class)">EagleplatformObject</a></span></span>
+      <span class="inheritName">Object</span>
       
         <ul class="fullTree">
           <li>Object</li>
-          
-            <li class="next">Struct</li>
-          
-            <li class="next"><span class='object_link'><a href="EagleplatformObject.html" title="Eagleplatform::EagleplatformObject (class)">EagleplatformObject</a></span></li>
           
             <li class="next">Eagleplatform::Record</li>
           
@@ -99,7 +95,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Record class</p>
+<p>Records</p>
 
 
   </div>
@@ -139,7 +135,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>If record present.</p>
+<p>Find Record by ID # @raise [ArgumentError] id must be numeric.</p>
 </div></span>
   
 </li>
@@ -148,7 +144,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#statistics-class_method" title="statistics (class method)">+ (Eagleplatform::Record) <strong>statistics</strong>(args = {}) </a>
+      <a href="#statistics-class_method" title="statistics (class method)">+ (Array) <strong>statistics</strong>(args = {}) </a>
     
 
     
@@ -249,7 +245,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#statistics-instance_method" title="#statistics (instance method)">- (Eagleplatform::Record) <strong>statistics</strong>(args = {}) </a>
+      <a href="#statistics-instance_method" title="#statistics (instance method)">- (Array) <strong>statistics</strong>(args = {}) </a>
     
 
     
@@ -296,12 +292,6 @@
   
 
 
-  
-  
-  
-  
-  
-  
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -317,7 +307,7 @@
 </p><div class="docstring">
   <div class="discussion">
     
-<p>If record present</p>
+<p>Find Record by ID # @raise [ArgumentError] id must be numeric</p>
 
 
   </div>
@@ -390,25 +380,25 @@
       <pre class="lines">
 
 
-72
-73
-74
-75
-76
-77
-78
-79</pre>
+83
+84
+85
+86
+87
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id must be numeric</span><span class='tstring_end'>'</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Numeric</span>
   <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_GET_INFO</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
                 <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_GET_INFO</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-  
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>      
-  <span class='const'>Eagleplatform</span><span class='op'>::</span><span class='const'>Record</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Record</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>  
+  <span class='id identifier rubyid_rec'>rec</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_rec'>rec</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_rec'>rec</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>    
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -418,7 +408,7 @@
       <div class="method_details ">
   <p class="signature " id="statistics-class_method">
   
-    + (<tt><span class='object_link'><a href="" title="Eagleplatform::Record (class)">Eagleplatform::Record</a></span></tt>) <strong>statistics</strong>(args = {}) 
+    + (<tt>Array</tt>) <strong>statistics</strong>(args = {}) 
   
 
   
@@ -522,13 +512,13 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Eagleplatform::Record (class)">Eagleplatform::Record</a></span></tt>)</span>
+        <span class='type'>(<tt>Array</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>return Record object if record created</p>
+<p>return records statistics</p>
 </div>
       
     </li>
@@ -554,23 +544,23 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <pre class="lines">
 
 
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
 196
-197</pre>
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 184</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_statistics'>statistics</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -708,17 +698,6 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <pre class="lines">
 
 
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
 109
 110
 111
@@ -726,10 +705,22 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
 113
 114
 115
-116</pre>
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upload_from_ftp'>upload_from_ftp</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record[:name] is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -747,8 +738,9 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <span class='rbrace'>}</span>
     <span class='rbrace'>}</span>
   <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPLOAD_FROM_FTP</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Record</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPLOAD_FROM_FTP</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>
+  <span class='id identifier rubyid_rec'>rec</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_rec'>rec</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_rec'>rec</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -868,22 +860,23 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <pre class="lines">
 
 
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142</pre>
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upload_from_http'>upload_from_http</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record[:name] is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -895,8 +888,9 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <span class='label'>parameters:</span> <span class='lbrace'>{</span> <span class='label'>url:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:upload_url</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
     <span class='rbrace'>}</span>
   <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPLOAD_FROM_HTTP</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Record</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPLOAD_FROM_HTTP</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>
+  <span class='id identifier rubyid_rec'>rec</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_rec'>rec</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_rec'>rec</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -960,14 +954,14 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <pre class="lines">
 
 
-168
-169
-170
-171
-172</pre>
+180
+181
+182
+183
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 168</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span>
   <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_DELETE</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
@@ -982,7 +976,7 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <div class="method_details ">
   <p class="signature " id="statistics-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Eagleplatform::Record (class)">Eagleplatform::Record</a></span></tt>) <strong>statistics</strong>(args = {}) 
+    - (<tt>Array</tt>) <strong>statistics</strong>(args = {}) 
   
 
   
@@ -1086,13 +1080,13 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Eagleplatform::Record (class)">Eagleplatform::Record</a></span></tt>)</span>
+        <span class='type'>(<tt>Array</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>return Record object if record created</p>
+<p>return record statistics</p>
 </div>
       
     </li>
@@ -1118,26 +1112,26 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <pre class="lines">
 
 
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
 223
 224
 225
 226
-227</pre>
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 211</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_statistics'>statistics</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>self.id is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -1213,18 +1207,18 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
       <pre class="lines">
 
 
-151
-152
-153
-154
-155
-156
-157
-158
-159</pre>
+164
+165
+166
+167
+168
+169
+170
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 164</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
   <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPDATE</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
@@ -1232,8 +1226,8 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
   <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:record_files</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span><span class='period'>.</span><span class='id identifier rubyid_diff'>diff</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_to_sym_hash'>to_sym_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='symbol'>:updated_at</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='kw'>self</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Something wrong</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span><span class='period'>.</span><span class='id identifier rubyid_diff'>diff</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='symbol'>:updated_at</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>self</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Something wrong</span><span class='tstring_end'>'</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1245,7 +1239,7 @@ Eagleplatform::Record.statistics(date_from: '1.5.2012', date_to: '25.5.2012', un
 </div>
     
     <div id="footer">
-  Generated on Mon May 21 12:38:03 2012 by 
+  Generated on Thu May 24 14:15:40 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>

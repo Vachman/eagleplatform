@@ -66,14 +66,10 @@
   
     <dt class="r1">Inherits:</dt>
     <dd class="r1">
-      <span class="inheritName"><span class='object_link'><a href="EagleplatformObject.html" title="Eagleplatform::EagleplatformObject (class)">EagleplatformObject</a></span></span>
+      <span class="inheritName">Object</span>
       
         <ul class="fullTree">
           <li>Object</li>
-          
-            <li class="next">Struct</li>
-          
-            <li class="next"><span class='object_link'><a href="EagleplatformObject.html" title="Eagleplatform::EagleplatformObject (class)">EagleplatformObject</a></span></li>
           
             <li class="next">Eagleplatform::Translation</li>
           
@@ -125,7 +121,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#find-class_method" title="find (class method)">+ (Object) <strong>find</strong>(id) </a>
+      <a href="#find-class_method" title="find (class method)">+ (Eagleplaform::Translation) <strong>find</strong>(id) </a>
     
 
     
@@ -138,7 +134,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Find Translation by ID.</p>
+</div></span>
   
 </li>
 
@@ -146,7 +144,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#upload_from_ftp-class_method" title="upload_from_ftp (class method)">+ (Object) <strong>upload_from_ftp</strong>(args) </a>
+      <a href="#list-class_method" title="list (class method)">+ (Array) <strong>list</strong>(per_page = 50, page = 1) </a>
     
 
     
@@ -159,28 +157,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#upload_from_http-class_method" title="upload_from_http (class method)">+ (Object) <strong>upload_from_http</strong>(args) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Get list of translations.</p>
+</div></span>
   
 </li>
 
@@ -197,7 +176,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong> </a>
+      <a href="#delete-instance_method" title="#delete (instance method)">- (String) <strong>delete</strong> </a>
     
 
     
@@ -210,7 +189,55 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Switch off translation from Eagleplaform.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#statistics-instance_method" title="#statistics (instance method)">- (Array) <strong>statistics</strong>(args = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get current translation statistics.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Eagleplatform::Translation) <strong>update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Update translation on Eagleplatform.</p>
+</div></span>
   
 </li>
 
@@ -219,12 +246,6 @@
   
 
 
-  
-  
-  
-  
-  
-  
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -233,18 +254,66 @@
       <div class="method_details first">
   <p class="signature first" id="find-class_method">
   
-    + (<tt>Object</tt>) <strong>find</strong>(id) 
+    + (<tt>Eagleplaform::Translation</tt>) <strong>find</strong>(id) 
   
 
   
 </p><div class="docstring">
   <div class="discussion">
     
+<p>Find Translation by ID</p>
+
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='const'>Eagleplatform</span><span class='op'>::</span><span class='const'>Translation</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='int'>45632</span><span class='rparen'>)</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>ID of translation</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Eagleplaform::Translation</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if translation present</p>
+</div>
+      
+    </li>
+  
+</ul>
 <h3>Raises:</h3>
 <ul class="raise">
   
@@ -254,6 +323,11 @@
         <span class='type'>(<tt>ArgumentError</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>id must be numeric</p>
+</div>
       
     </li>
   
@@ -265,25 +339,27 @@
       <pre class="lines">
 
 
-232
-233
-234
-235
-236
-237
-238
-239</pre>
+294
+295
+296
+297
+298
+299
+300
+301
+302</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 294</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id must be numeric</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Numeric</span>
-  <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_GET_INFO</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
-                <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_GET_INFO</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id must be numeric</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Numeric</span>
+   <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_GET_INFO</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
+                 <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_GET_INFO</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>
 
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>      
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Record</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>      
+   <span class='id identifier rubyid_trans'>trans</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+   <span class='id identifier rubyid_trans'>trans</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_trans'>trans</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -291,29 +367,87 @@
 </div>
     
       <div class="method_details ">
-  <p class="signature " id="upload_from_ftp-class_method">
+  <p class="signature " id="list-class_method">
   
-    + (<tt>Object</tt>) <strong>upload_from_ftp</strong>(args) 
+    + (<tt>Array</tt>) <strong>list</strong>(per_page = 50, page = 1) 
   
 
   
 </p><div class="docstring">
   <div class="discussion">
     
+<p>Get list of translations</p>
+
 
   </div>
 </div>
 <div class="tags">
   
-<h3>Raises:</h3>
-<ul class="raise">
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id identifier rubyid_translations'>translations</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='op'>::</span><span class='const'>Translation</span><span class='period'>.</span><span class='id identifier rubyid_list'>list</span>
+
+<span class='comment'>#Get translations page=2, per_page=20
+</span><span class='id identifier rubyid_translations'>translations</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='op'>::</span><span class='const'>Translation</span><span class='period'>.</span><span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>2</span><span class='rparen'>)</span> </pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>per_page</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>50</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>translations number per page</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>page</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>1</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>translations page</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt>ArgumentError</tt>)</span>
+        <span class='type'>(<tt>Array</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of Translations objects</p>
+</div>
       
     </li>
   
@@ -325,93 +459,6 @@
       <pre class="lines">
 
 
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 241</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upload_from_ftp'>upload_from_ftp</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record[:name] is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ftp[:server] is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:ftp</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:server</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ftp[:file_path] is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:ftp</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:file_path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>      
-  <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-    <span class='label'>record:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='comma'>,</span>
-    <span class='label'>source:</span> <span class='lbrace'>{</span> 
-      <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ftp</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-      <span class='label'>parameters:</span> <span class='lbrace'>{</span> 
-        <span class='label'>host:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:ftp</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:server</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>file:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:ftp</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:file_path</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>username:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:ftp</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:username</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ftp</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-        <span class='label'>password:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:ftp</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
-      <span class='rbrace'>}</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPLOAD_FROM_FTP</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Record</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="upload_from_http-class_method">
-  
-    + (<tt>Object</tt>) <strong>upload_from_http</strong>(args) 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<h3>Raises:</h3>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>ArgumentError</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-261
-262
-263
-264
-265
 266
 267
 268
@@ -419,23 +466,42 @@
 270
 271
 272
-273</pre>
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 266</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_upload_from_http'>upload_from_http</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record[:name] is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>upload_url is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:upload_url</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_per_page'>per_page</span> <span class='op'>=</span> <span class='int'>50</span><span class='comma'>,</span> <span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='int'>1</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-    <span class='label'>record:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='comma'>,</span>
-    <span class='label'>source:</span> <span class='lbrace'>{</span>
-      <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>http</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-      <span class='label'>parameters:</span> <span class='lbrace'>{</span> <span class='label'>url:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:upload_url</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-    <span class='rbrace'>}</span>
+    <span class='label'>per_page:</span> <span class='id identifier rubyid_per_page'>per_page</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+    <span class='label'>page:</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
   <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPLOAD_FROM_HTTP</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Record</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATIONS_GET_LIST</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>
+  <span class='id identifier rubyid_translations'>translations</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:translations</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_translation'>translation</span><span class='op'>|</span>
+    <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_t'>t</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_translation'>translation</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_translations'>translations</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:total_pages</span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Translations per_page: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_per_page'>per_page</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Current page: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:current_page</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Total pages: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:total_pages</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Total entries: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:total_entries</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>        
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_translations'>translations</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -449,39 +515,326 @@
     
     
       <div class="method_details first">
-  <p class="signature first" id="update-instance_method">
+  <p class="signature first" id="delete-instance_method">
   
-    - (<tt>Object</tt>) <strong>update</strong> 
+    - (<tt>String</tt>) <strong>delete</strong> 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Switch off translation from Eagleplaform</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='op'>::</span><span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='int'>1234</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span></pre>
+    
+  </div>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>'ok' if translation switched off successfully</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-275
-276
-277
-278
-279
-280
-281
-282
-283</pre>
+334
+335
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 275</span>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 334</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span>
+  <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_DELETE</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
+                <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_DELETE</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>        
+  <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ok</span><span class='tstring_end'>&quot;</span></span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Translation id: '</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_content'>', name:</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> is switched off</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='lparen'>(</span><span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Can't delete record</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="statistics-instance_method">
+  
+    - (<tt>Array</tt>) <strong>statistics</strong>(args = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Get current translation statistics</p>
+
+<pre class="code ruby"><code><span class='const'>Date</span> <span class='id identifier rubyid_format'>format</span> <span class='id identifier rubyid_is'>is</span> <span class='op'>-</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dd.mm.yyyy</span><span class='tstring_end'>'</span></span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='op'>::</span><span class='const'>Translation</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='int'>12345</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_statistics'>statistics</span><span class='lparen'>(</span><span class='label'>date_from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1.5.2012</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>date_to:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>25.5.2012</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the statistics options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <h3>Options Hash (<tt>args</tt>):</h3>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:date_from</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>'yesterday'</tt>
+            
+          </span>
+          &mdash; <div class='inline'>
+<p>yesterday date</p>
+</div>
+        </li>
+      
+        <li>
+          <span class="name">:date_to</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>'today'</tt>
+            
+          </span>
+          &mdash; <div class='inline'>
+<p>today date</p>
+</div>
+        </li>
+      
+    </ul>
+  
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>return translation statistics</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 350</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_statistics'>statistics</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>self.id is blank</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+  <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>date_from:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:date_from</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%m.%Y</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='label'>date_to:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:date_to</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>%d.%m.%Y</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Wrong 'date_from' format. Must be 'dd.mm.yyyy'</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'>DATE_FORMAT</span> <span class='op'>=~</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:date_from</span><span class='rbracket'>]</span> 
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Wrong 'date_to' format. Must be 'dd.mm.yyyy'</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'>DATE_FORMAT</span> <span class='op'>=~</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:date_from</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>date_from: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:date_from</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_content'> &gt; date_to: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:date_from</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:date_from</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:date_to</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span>
+
+  <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_GET_STATISTICS</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
+                <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_GET_STATISTICS</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="update-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Eagleplatform::Translation (class)">Eagleplatform::Translation</a></span></tt>) <strong>update</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Update translation on Eagleplatform</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='op'>::</span><span class='const'>Translation</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='int'>1234</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mega stream</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span></pre>
+    
+  </div>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Eagleplatform::Translation (class)">Eagleplatform::Translation</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if record successfully updated</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eagleplatform.rb', line 311</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
-   <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPDATE</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
-                 <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>RECORD_UPDATE</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+   <span class='id identifier rubyid_api_method'>api_method</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>method:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_UPDATE</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span><span class='comma'>,</span> 
+                 <span class='label'>path:</span> <span class='const'>Methods</span><span class='op'>::</span><span class='const'>TRANSLATION_UPDATE</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>:id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rbrace'>}</span>
    <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
-   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:record</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:record_files</span><span class='rparen'>)</span>
-   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span><span class='period'>.</span><span class='id identifier rubyid_diff'>diff</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_to_sym_hash'>to_sym_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='symbol'>:updated_at</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='kw'>self</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Something wrong</span><span class='tstring_end'>'</span></span>  
+   <span class='id identifier rubyid_translation'>translation</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:user_id</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:account_id</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:status</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:created_at</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:updated_at</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:starts_at</span><span class='rparen'>)</span>
+   
+   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:translation</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_translation'>translation</span>
+   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Eagleplatform</span><span class='period'>.</span><span class='id identifier rubyid_call_api'>call_api</span><span class='lparen'>(</span><span class='id identifier rubyid_api_method'>api_method</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_options'>to_options</span>
+   <span class='id identifier rubyid_translation'>translation</span><span class='period'>.</span><span class='id identifier rubyid_diff'>diff</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='symbol'>:updated_at</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>self</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Something wrong</span><span class='tstring_end'>'</span></span>  
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -493,7 +846,7 @@
 </div>
     
     <div id="footer">
-  Generated on Mon May 21 12:38:03 2012 by 
+  Generated on Thu May 24 14:15:40 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>
