@@ -7,8 +7,8 @@
 - update record by ID  
 - delete record by ID
 - edit record object fields
-- update record by object
-- delete record by object
+- update record using object
+- delete record using object
 - upload record form ftp
 - upload record from http
 - get record visitors (uniq) or views statistics
@@ -20,8 +20,8 @@
 - update translation by ID  
 - delete translation by ID
 - edit translation object fields
-- update translation by object
-- delete translation by object
+- update translation using object
+- delete translation using object
 - get translation statistics
 
 <b>Filters:</b>
