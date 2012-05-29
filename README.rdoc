@@ -11,6 +11,15 @@
   # Setup
   Eagleplatform.setup('YOUR_ACCOUNT','YOUR_TOKEN')  
 
+  # Upload record from ftp
+  record_params = { name: 'SomeRecord', description: 'Example Video' }
+  ftp_params = { server: 'ftp.example_server.com',file_path: '/videos/my_video.mpg',username: 'ftp_username', password: 'ftp_passowrd' }  
+  Eagleplatform::Record.upload_form_ftp( record: record_params, ftp: ftp_params)
+ 
+  # Upload record ftom http
+  record_params = { name: 'SomeRecord', description: 'Example Video' }
+  Eagleplatform::Record.upload_form_http( record: record_params, upload_url: 'http://exapmle.com/video.mpg')
+
   # Puts translations start time
   Eagleplatform::Translation.list.each { |t| puts t.starts._at }  
 
