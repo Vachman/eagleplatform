@@ -16,7 +16,7 @@
   ftp_params = { server: 'ftp.example_server.com',file_path: '/videos/my_video.mpg',username: 'ftp_username', password: 'ftp_passowrd' }  
   Eagleplatform::Record.upload_form_ftp( record: record_params, ftp: ftp_params)
  
-<b>Upload record ftom http</b>
+<b>Upload record from http</b>
   record_params = { name: 'SomeRecord', description: 'Example Video' }
   Eagleplatform::Record.upload_form_http( record: record_params, upload_url: 'http://exapmle.com/video.mpg')
 
