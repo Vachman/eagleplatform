@@ -8,7 +8,7 @@
   
   require 'eagleplatform'
   
-  # Setup
+  _Setup
   Eagleplatform.setup('YOUR_ACCOUNT','YOUR_TOKEN')  
 
   # Upload record from ftp
@@ -34,3 +34,8 @@
   # Delete record with ID
   Eagleplatform::Record.delete(12)   
 
+== Meta
+  Library documentation: http://
+  API documentation: http://dev.eagleplatform.com
+  
+  Eagleplatform: http://www.eagleplatform.com
