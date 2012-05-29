@@ -1,5 +1,33 @@
 == Eagleplatform - public API library
 
+== Features
+  
+<b>Records:</b>
+- find record by ID
+- update record by ID  
+- delete record by ID
+- edit record object fields
+- update record by object
+- delete record by object
+- upload record form ftp
+- upload record from http
+- get record visitors (uniq) or views statistics
+- get all records visitors (uniq) or views statistics
+
+<b>Translations:</b>
+- get translations list
+- find translation by ID
+- update translation by ID  
+- delete translation by ID
+- edit translation object fields
+- update translation by object
+- delete translation by object
+- get translation statistics
+
+<b>Filters:</b>
+- find filter by ID
+- see all filter records
+
 == Installation:
 
   gem install eagleplatform
