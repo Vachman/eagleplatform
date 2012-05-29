@@ -35,7 +35,7 @@
   Eagleplatform::Record.delete(12)   
 
 == Meta
-Library documentation: http://yardoc.org
+Library documentation: http://rubydoc.info/gems/eagleplatform/0.0.1/frames
   
 API documentation: http://dev.eagleplatform.com
   
