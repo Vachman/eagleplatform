@@ -8,34 +8,35 @@
   
   require 'eagleplatform'
   
-  _Setup
+<b>Setup</b>
   Eagleplatform.setup('YOUR_ACCOUNT','YOUR_TOKEN')  
 
-  # Upload record from ftp
+<b>Upload record from ftp</b>
   record_params = { name: 'SomeRecord', description: 'Example Video' }
   ftp_params = { server: 'ftp.example_server.com',file_path: '/videos/my_video.mpg',username: 'ftp_username', password: 'ftp_passowrd' }  
   Eagleplatform::Record.upload_form_ftp( record: record_params, ftp: ftp_params)
  
-  # Upload record ftom http
+<b>Upload record ftom http</b>
   record_params = { name: 'SomeRecord', description: 'Example Video' }
   Eagleplatform::Record.upload_form_http( record: record_params, upload_url: 'http://exapmle.com/video.mpg')
 
-  # Puts translations start time
+<b>Puts translations start time</b>
   Eagleplatform::Translation.list.each { |t| puts t.starts._at }  
 
-  # Update translation name with ID
+<b>Update translation name with ID</b>
   Eagleplatform::Record.update(id: 12, name: 'Hello World')  
 
-  # Get Record object and update description
+<b>Get Record object and update description</b>
   r = Eagleplatform::Record.find(1234)  
   r.description = 'Foo'
   r.update
   
-  # Delete record with ID
+<b>Delete record with ID</b>
   Eagleplatform::Record.delete(12)   
 
 == Meta
-  Library documentation: http://
-  API documentation: http://dev.eagleplatform.com
+Library documentation: http://yardoc.org
   
-  Eagleplatform: http://www.eagleplatform.com
+API documentation: http://dev.eagleplatform.com
+  
+Eagleplatform: http://www.eagleplatform.com
