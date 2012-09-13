@@ -107,13 +107,13 @@ module  Eagleplatform
     #   f = Eagleplatform::Filter.find(54321, 50, 3 )
     # @return [Eagleplatform::Filter] if filetr present
     # @raise [ArgumentError] id must be numeric
-    def self.find(id, per_page = 50, page = 1)
+    def self.find(id, per_page = 50, page = 1, params = {})
       raise 'per_page must be betwen 1 to 1000' unless per_page.between?(1,1000)
       raise ArgumentError, 'id must be numeric' unless id.is_a? Numeric
-      params = {
+      params.merge!({
         page: page.to_s,
         per_page: per_page.to_s
-      }
+      })
       api_method = {method: Methods::FILTER_GET_RECORDS[:method], 
                     path: Methods::FILTER_GET_RECORDS[:path].gsub(':id',id.to_s)}
       result = Eagleplatform.call_api(api_method, params)    
